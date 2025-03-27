@@ -1,35 +1,40 @@
 # Advanced HTML Reference
 
 ## Advanced Form Controls
-/* Modern form elements providing enhanced user interaction and data validation */
+/* Modern HTML5 form elements that provide enhanced user interaction, built-in validation, 
+   and improved data collection without requiring JavaScript */
+
 1. Advanced Input Types
    ```html
-   <!-- Date and time inputs with built-in validation -->
+   <!-- Date and time inputs - Provide native calendar and time picker interfaces -->
    <input type="date" name="event-date">
    <input type="time" name="meeting-time">
    <input type="datetime-local" name="schedule">
    
-   <!-- Numeric inputs with controls -->
+   <!-- Numeric inputs - Allow precise number control with built-in validation -->
    <input type="number" min="0" max="100" step="5">
    <input type="range" min="0" max="100" value="50">
    
-   <!-- Color picker -->
+   <!-- Native color picker - Opens system color selection interface -->
    <input type="color" name="theme-color">
    
-   <!-- File upload with multiple files and type restrictions -->
+   <!-- Enhanced file upload - Supports multiple files and type filtering -->
    <input type="file" multiple accept="image/*">
    ```
 
 ## Interactive Elements
-/* Modern HTML elements for user interaction without JavaScript */
+/* Native HTML elements that provide user interaction capabilities 
+   without requiring JavaScript implementation */
+
 1. Details and Summary
    ```html
+   <!-- Basic expandable/collapsible content section -->
    <details>
        <summary>Click to expand</summary>
        <p>Hidden content revealed when clicked.</p>
    </details>
 
-   <!-- Nested expandable sections -->
+   <!-- Nested expandable sections for hierarchical content -->
    <details>
        <summary>Main Section</summary>
        <details>
@@ -39,17 +44,13 @@
    </details>
    ```
 
-
-
-
-
-
-
-
 ## Advanced Multimedia
-/* Modern multimedia elements with enhanced controls and features */
+/* Enhanced media elements supporting multiple formats, subtitles, 
+   and cross-browser compatibility */
+
 1. Advanced Video Implementation
    ```html
+   <!-- Video player with multiple sources and subtitle support -->
    <video width="720" height="480" controls preload="metadata">
        <source src="video.mp4" type="video/mp4">
        <source src="video.webm" type="video/webm">
@@ -60,6 +61,7 @@
 
 2. Advanced Audio Features
    ```html
+   <!-- Audio player with multiple formats and lyrics support -->
    <audio controls crossorigin="anonymous">
        <source src="audio.mp3" type="audio/mpeg">
        <source src="audio.ogg" type="audio/ogg">
@@ -68,9 +70,12 @@
    ```
 
 ## Canvas and SVG
-/* Graphics and animation capabilities */
+/* HTML5 elements for creating graphics, animations, and 
+   interactive visual content */
+
 1. Canvas Element
    ```html
+   <!-- Dynamic drawing surface for JavaScript graphics -->
    <canvas id="myCanvas" width="500" height="300">
        Your browser doesn't support canvas.
    </canvas>
@@ -78,20 +83,19 @@
 
 2. Inline SVG
    ```html
+   <!-- Scalable Vector Graphics with basic shapes -->
    <svg width="100" height="100">
        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red"/>
        <rect x="10" y="10" width="30" height="30" fill="blue"/>
    </svg>
    ```
 
-
-
-
-
 ## Advanced Data Attributes
-/* Custom data attributes for storing extra information */
+/* Custom data attributes for storing metadata that can be accessed via CSS or JavaScript */
+
 1. Data Attributes Usage
    ```html
+   <!-- Article with metadata for filtering and sorting -->
    <article
        data-category="technology"
        data-publish-date="2024-01-20"
@@ -100,6 +104,7 @@
        <p>Content here...</p>
    </article>
 
+   <!-- Interactive button with sharing metadata -->
    <button 
        data-action="share"
        data-platform="twitter"
@@ -109,9 +114,11 @@
    ```
 
 ## Advanced Semantic Elements
-/* Specialized semantic elements for specific content types */
+/* Specialized HTML5 elements that provide meaningful structure and improve SEO */
+
 1. Complex Article Structure
    ```html
+   <!-- Complete article structure with semantic sections -->
    <article>
        <header>
            <h1>Article Title</h1>
@@ -122,6 +129,7 @@
            <h2>Introduction</h2>
            <p>Opening paragraph...</p>
            
+           <!-- Responsive image with caption -->
            <figure>
                <picture>
                    <source media="(min-width: 800px)" srcset="large.jpg">
@@ -140,29 +148,27 @@
    </article>
    ```
 
-
-
-
-
 ## Advanced Form Validation
-/* Complex form validation and organization techniques */
+/* Complex form validation techniques using HTML5 attributes and custom messaging */
+
 1. Advanced Form Patterns
    ```html
+   <!-- Form with custom validation and grouping -->
    <form id="registration" novalidate>
-       <!-- Pattern matching for specific formats -->
+       <!-- Text input with pattern matching -->
        <input 
            type="text" 
            pattern="[A-Za-z]{3,}"
            title="Minimum three letters"
            required>
 
-       <!-- Custom validation messages -->
+       <!-- Email with custom validation message -->
        <input 
            type="email"
            oninvalid="this.setCustomValidity('Please enter a valid email')"
            oninput="this.setCustomValidity('')">
 
-       <!-- Fieldset for grouping -->
+       <!-- Grouped form controls -->
        <fieldset>
            <legend>Contact Preferences</legend>
            <input type="checkbox" name="contact[]" value="email">
@@ -172,42 +178,44 @@
    ```
 
 ## Advanced Metadata and Links
-/* Enhanced metadata for SEO and social sharing */
+/* Enhanced metadata tags for SEO, social sharing, and resource optimization */
+
 1. Advanced Meta Tags
    ```html
    <head>
-       <!-- Advanced SEO -->
+       <!-- SEO optimization tags -->
        <meta name="robots" content="index, follow">
        <meta name="googlebot" content="index, follow">
        <link rel="canonical" href="https://example.com/page">
 
-       <!-- Twitter Cards -->
+       <!-- Social media card configuration -->
        <meta name="twitter:card" content="summary_large_image">
        <meta name="twitter:site" content="@username">
        <meta name="twitter:creator" content="@username">
 
-       <!-- Facebook Open Graph with additional properties -->
+       <!-- Open Graph protocol tags -->
        <meta property="og:type" content="article">
        <meta property="og:locale" content="en_US">
        <meta property="article:published_time" content="2024-01-20">
        <meta property="article:author" content="Author Name">
 
-       <!-- Preload critical resources -->
+       <!-- Resource preloading -->
        <link rel="preload" href="critical.css" as="style">
        <link rel="preload" href="main.js" as="script">
    </head>
    ```
 
-
-
 ## Advanced Accessibility
-/* Enhanced accessibility features for better user experience */
+/* ARIA roles and attributes for enhanced accessibility support */
+
 1. ARIA Roles and Properties
    ```html
+   <!-- Live region for dynamic content -->
    <div role="alert" aria-live="polite">
        <p>Status message appears here</p>
    </div>
 
+   <!-- Accessible interactive menu button -->
    <button 
        aria-expanded="false"
        aria-controls="menu-content"
@@ -215,6 +223,7 @@
        <span class="icon-menu"></span>
    </button>
 
+   <!-- Hidden menu content -->
    <div 
        id="menu-content" 
        role="menu" 
@@ -224,9 +233,11 @@
    ```
 
 ## Interactive Web Components
-/* Custom elements and templates for reusable components */
+/* Custom elements and templates for creating reusable component structures */
+
 1. Template and Slot Elements
    ```html
+   <!-- Reusable card component template -->
    <template id="custom-card">
        <div class="card">
            <header>
@@ -241,7 +252,7 @@
        </div>
    </template>
 
-   <!-- Usage -->
+   <!-- Template implementation -->
    <div is="custom-card">
        <h2 slot="title">Card Title</h2>
        <p slot="content">Card content goes here</p>
